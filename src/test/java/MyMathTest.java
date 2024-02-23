@@ -5,17 +5,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class MyMathTest {
+    private MyMath myMath = new MyMath();
     @Test
-    void test(){
-        int []a={1,100};
-        MyMath math = new MyMath();
-        int result = math.addition(a);
-        System.out.println(result);
-        int expectedRes = 101;
-        assertEquals(expectedRes,result);
-
+    void ThreeLengthArray(){
+        System.out.println(new MyMath().addition(new int[]{1,100}));
+        assertEquals(101, new MyMath().addition(new int[]{1,100}));
         //absence of failure is a success
         //Test condition or assert
 
+    }
+    @Test
+    void ZeroLengthArray(){
+        System.out.println(new MyMath().addition(new int[]{0,0}));
+        assertEquals(0, new MyMath().addition(new int[]{0,0}));
     }
 }
